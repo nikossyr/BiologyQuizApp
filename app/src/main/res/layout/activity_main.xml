@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.quizapp.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/head_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:descendantFocusability="beforeDescendants"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:adjustViewBounds="true"
+                android:maxHeight="80dp"
+                android:maxWidth="80dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/chem_glass" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/lato_light"
+                android:text="@string/quiz_header"
+                android:textSize="38sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/lato_light_italic"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="@string/description"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/lato_light"
+            android:text="@string/question_1"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/lato"
+            android:text="@string/q1_head"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/answer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/lato_light"
+            android:hint="@string/q1_hint"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/lato_light"
+            android:text="@string/question_2"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/lato"
+            android:text="@string/q2_head"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/Q2_radiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/q2_ans_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_light_italic"
+                android:onClick="Q2_radio_button"
+                android:text="@string/q2_a" />
+
+            <RadioButton
+                android:id="@+id/q2_ans_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_light_italic"
+                android:onClick="Q2_radio_button"
+                android:text="@string/q2_b" />
+
+            <RadioButton
+                android:id="@+id/q2_ans_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_light_italic"
+                android:onClick="Q2_radio_button"
+                android:text="@string/q2_c" />
+
+            <RadioButton
+                android:id="@+id/q2_ans_d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_light_italic"
+                android:onClick="Q2_radio_button"
+                android:text="@string/q2_d" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/lato_light"
+            android:text="@string/question_3"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/lato"
+            android:text="@string/q3_head"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/q3_ans_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@id/q3_ans_a"
+                android:fontFamily="@font/lato_light_italic"
+                android:text="@string/q3_a"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/q3_ans_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q3_ans_a" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q3_ans_a"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@id/q3_ans_b"
+                android:fontFamily="@font/lato_light_italic"
+                android:text="@string/q3_b"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/q3_ans_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q3_ans_b" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q3_ans_b"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@id/q3_ans_c"
+                android:fontFamily="@font/lato_light_italic"
+                android:text="@string/q3_c"
+                android:textStyle="bold" />
+
+
+            <CheckBox
+                android:id="@+id/q3_ans_d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q3_ans_c" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/q3_ans_c"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@id/q3_ans_d"
+                android:fontFamily="@font/lato_light_italic"
+                android:text="@string/q3_d"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/lato_light"
+            android:text="@string/question_4"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/lato"
+            android:text="@string/q4_head"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/Q4_radiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/q4_ans_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_light_italic"
+                android:onClick="Q4_radio_button"
+                android:text="@string/q4_a" />
+
+            <RadioButton
+                android:id="@+id/q4_ans_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_light_italic"
+                android:onClick="Q4_radio_button"
+                android:text="@string/q4_b" />
+
+            <RadioButton
+                android:id="@+id/q4_ans_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_light_italic"
+                android:onClick="Q4_radio_button"
+                android:text="@string/q4_c" />
+
+            <RadioButton
+                android:id="@+id/q4_ans_d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_light_italic"
+                android:onClick="Q4_radio_button"
+                android:text="@string/q4_d" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/lato_light"
+            android:text="@string/question_5"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/lato"
+            android:text="@string/q5_head"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/Q5_radiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/q5_ans_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_light_italic"
+                android:onClick="Q5_radio_button"
+                android:text="@string/q5_a" />
+
+            <RadioButton
+                android:id="@+id/q5_ans_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_light_italic"
+                android:onClick="Q5_radio_button"
+                android:text="@string/q5_b" />
+
+            <RadioButton
+                android:id="@+id/q5_ans_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_light_italic"
+                android:onClick="Q5_radio_button"
+                android:text="@string/q5_c" />
+
+            <RadioButton
+                android:id="@+id/q5_ans_d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/lato_light_italic"
+                android:onClick="Q5_radio_button"
+                android:text="@string/q5_d" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/lato"
+                android:onClick="submit_answers"
+                android:text="@string/submit_answers"
+                android:theme="@style/Buttons" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/lato"
+                android:onClick="reset_answers"
+                android:text="@string/reset_button"
+                android:theme="@style/Buttons" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+
+

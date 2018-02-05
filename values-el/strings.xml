@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="quiz_header">Τεστ γνώσεων Βιολογίας</string>
+    <string name="description">Αν απαντήσετε σωστά σε όλες τις ερωτήσεις, θα πάρετε ένα μπισκότο. Σοβαρά! Δοκιμάστε το!</string>
+    <string name="question_1">Ερώτηση 1</string>
+    <string name="question_2">Ερώτηση 2</string>
+    <string name="question_3">Ερώτηση 3</string>
+    <string name="question_4">Ερώτηση 4</string>
+    <string name="question_5">Ερώτηση 5</string>
+    <string name="q1_head">Ποια είναι η θεμέλιος λίθος όλων των ζωντανών οργανισμών;</string>
+    <string name="q1_hint">Γράψτε την απάντησή σας εδώ</string>
+    <string name="q2_head">Ποιο κυτταρικό διαμέρισμα περιέχει το DNA στο ευκαριωτικό κύτταρο;</string>
+    <string name="q2_b">Πυρήνας</string>
+    <string name="q2_c">Ενδοπλασματικό δίκτυο</string>
+    <string name="q2_d">Μιτοχόνδριο</string>
+    <string name="q2_a">Σύμπλεγμα Golgi</string>
+    <string name="q3_head">Ποιο(α) από τα παρακάτω μόρια μπορεί(ούν) να αποθηκεύσει(ουν) γενετική πληροφορία;</string>
+    <string name="q3_a">DNA</string>
+    <string name="q3_c">RNA</string>
+    <string name="q3_b">Πρωτεΐνες</string>
+    <string name="q3_d">Λιπίδια</string>
+    <string name="q4_head">Ποια είναι η λειτουργία των ριβοσωμάτων στο κύττταρο;</string>
+    <string name="q4_a">Αντιγραφή DNA</string>
+    <string name="q4_b">Πρωτεϊνοσύνθεση</string>
+    <string name="q4_d">Τίποτα σημαντικό.Ζει μονάχα εν λευκό.</string>
+    <string name="q4_c">Συρραφή RNA</string>
+    <string name="q5_head">Ποιο από τα παρακάτω κύτταρα δεν έχουν πυρήνα;</string>
+    <string name="q5_a">Ζωικό κύτταρα</string>
+    <string name="q5_b">Φυτικό κύτταρο</string>
+    <string name="q5_c">Βακτηριακό κύτταρο</string>
+    <string name="q5_d">Κύτταρο μύκητα</string>
+    <string name="submit_answers">Υποβολή απαντήσεων</string>
+    <string name="reset_button">Επανα</string>
+</resources>

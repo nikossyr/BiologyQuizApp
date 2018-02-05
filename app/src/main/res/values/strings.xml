@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <!-- App Headers -->
+    <string name="quiz_header">Biology Quiz</string>
+    <string name="description">Test your biology knowledge!\nHow many of the following questions can you get right?</string>
+    <!--Question Number -->
+    <string name="question_1">Question 1</string>
+    <string name="question_2">Question 2</string>
+    <string name="question_3">Question 3</string>
+    <string name="question_4">Question 4</string>
+    <string name="question_5">Question 5</string>
+    <!-- Question 1 -->
+    <string name="q1_head">What is the basic building block of all living things?</string>
+    <string name="q1_hint">Write your answer here</string>
+    <!-- Question 2 -->
+    <string name="q2_head">Which cellular organelle contains the DNA in the eukaryotic cell?</string>
+    <string name="q2_a">Golgi apparatus</string>
+    <string name="q2_b">Nucleus</string>
+    <string name="q2_c">Endoplasmic reticulum</string>
+    <string name="q2_d">Peroxisome</string>
+    <!-- Question 3 -->
+    <string name="q3_head">Which of the following molecules can store genetic information?</string>
+    <string name="q3_a">DNA</string>
+    <string name="q3_b">Proteins</string>
+    <string name="q3_c">RNA</string>
+    <string name="q3_d">Lipids</string>
+    <!-- Question 4 -->
+    <string name="q4_head">What is the function of ribosomes in the cell?</string>
+    <string name="q4_a">DNA Replication</string>
+    <string name="q4_b">Protein Biosynthesis</string>
+    <string name="q4_c">RNA Splicing</string>
+    <string name="q4_d">Nothing important. Just hanging around.</string>
+    <!-- Question 5 -->
+    <string name="q5_head">Which of the following cells do not have a nucleus?</string>
+    <string name="q5_a">Animal cell</string>
+    <string name="q5_b">Plant cell</string>
+    <string name="q5_c">Bacterial cell</string>
+    <string name="q5_d">Fungus cell</string>
+
+    <string name="submit_answers">Submit answers</string>
+    <string name="reset_button">Reset</string>
+
+</resources>
