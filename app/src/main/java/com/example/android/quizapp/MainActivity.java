@@ -1,8 +1,7 @@
 package com.example.android.quizapp;
 
-
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -13,21 +12,49 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-int score = 0;
-int scorePerCent = 0;
-boolean Q1checked;
-boolean Q2checked;
-boolean Q3checked;
-boolean Q4checked;
-boolean Q5checked;
-
+    int score = 0;
+    int scorePerCent = 0;
+    boolean Q1checked;
+    boolean Q2checked;
+    boolean Q3checked;
+    boolean Q4checked;
+    boolean Q5checked;
+    String q1;
+    String q2;
+    String q3;
+    String q4;
+    String q5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // recovering the instance state
+        if (savedInstanceState != null) {
+            Q1checked = savedInstanceState.getBoolean(q1);
+            Q2checked = savedInstanceState.getBoolean(q2);
+            Q3checked = savedInstanceState.getBoolean(q3);
+            Q4checked = savedInstanceState.getBoolean(q4);
+            Q5checked = savedInstanceState.getBoolean(q5);
+        }
+
         setContentView(R.layout.activity_main);
     }
 
+    /**
+     * invoked when the activity may be temporarily destroyed, save the instance state here
+     */
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putBoolean(q1, Q1checked);
+        outState.putBoolean(q2, Q2checked);
+        outState.putBoolean(q3, Q3checked);
+        outState.putBoolean(q4, Q4checked);
+        outState.putBoolean(q5, Q5checked);
+
+        // call superclass to save any view hierarchy
+        super.onSaveInstanceState(outState);
+    }
 
     /**
      * This method is activated when the Submit answers button is pressed
@@ -37,17 +64,28 @@ boolean Q5checked;
         String answer1 = answer1Input.getText().toString().trim();
         if (answer1.equalsIgnoreCase("cell")) {
             Q1checked = true;
+        } else if(answer1.equalsIgnoreCase("cells")){
+            Q1checked = true;
+        }else{
+            Q1checked = false;
         }
-
         CheckBox checkView1 = (CheckBox) findViewById(R.id.q3_ans_a);
         boolean checkStatus1 = checkView1.isChecked();
-        CheckBox checkView2 = (CheckBox) findViewById(R.id.q3_ans_c);
+        CheckBox checkView2 = (CheckBox) findViewById(R.id.q3_ans_b);
         boolean checkStatus2 = checkView2.isChecked();
-        if ((checkStatus1) && (checkStatus2)) {
-            Q3checked = true;
+        CheckBox checkView3 = (CheckBox) findViewById(R.id.q3_ans_c);
+        boolean checkStatus3 = checkView3.isChecked();
+        CheckBox checkView4 = (CheckBox) findViewById(R.id.q3_ans_d);
+        boolean checkStatus4 = checkView4.isChecked();
+        if ((checkStatus1) && (checkStatus3)) {
+            if ((!checkStatus2) && (!checkStatus4)){
+                Q3checked = true;
+            }else {
+                Q3checked = false;
+            }
         }
         int finalScore = calculateScore(Q1checked, Q2checked, Q3checked, Q4checked, Q5checked);
-        scorePerCent = finalScore* 100/5 ;
+        scorePerCent = finalScore * 100 / 5;
         Toast.makeText(this, "You answered " + scorePerCent + "% (" + finalScore + "/5) questions correct", Toast.LENGTH_LONG).show();
         score = 0;
         scorePerCent = 0;
@@ -61,23 +99,23 @@ boolean Q5checked;
         boolean checked = ((RadioButton) view).isChecked();
 
         // Check which radio button was clicked
-        switch(view.getId()) {
+        switch (view.getId()) {
             case R.id.q2_ans_a:
                 if (checked)
                     Q2checked = false;
-                    break;
+                break;
             case R.id.q2_ans_b:
                 if (checked)
                     Q2checked = true;
-                    break;
+                break;
             case R.id.q2_ans_c:
                 if (checked)
                     Q2checked = false;
-                    break;
+                break;
             case R.id.q2_ans_d:
                 if (checked)
                     Q2checked = false;
-                    break;
+                break;
         }
     }
 
@@ -90,27 +128,26 @@ boolean Q5checked;
         boolean checked = ((CheckBox) view).isChecked();
 
         // Check which checkbox was clicked
-        switch(view.getId()) {
+        switch (view.getId()) {
             case R.id.q3_ans_a:
                 if (checked)
                     subscore = subscore + 1;
-                    checked = false;
+                checked = false;
             case R.id.q3_ans_b:
                 if (checked)
                     subscore = subscore - 1;
-                    checked = false;
+                checked = false;
                 // Cheese me
             case R.id.q3_ans_c:
                 if (checked)
                     subscore = subscore + 1;
-                    checked = false;
+                checked = false;
             case R.id.q3_ans_d:
                 if (checked)
                     subscore = subscore - 1;
-
         }
         if (subscore == 2) {
-            score = score +1;
+            score = score + 1;
         }
     }
 
@@ -122,7 +159,7 @@ boolean Q5checked;
         boolean checked = ((RadioButton) view).isChecked();
 
         // Check which radio button was clicked
-        switch(view.getId()) {
+        switch (view.getId()) {
             case R.id.q4_ans_a:
                 if (checked)
                     Q4checked = false;
@@ -150,7 +187,7 @@ boolean Q5checked;
         boolean checked = ((RadioButton) view).isChecked();
 
         // Check which radio button was clicked
-        switch(view.getId()) {
+        switch (view.getId()) {
             case R.id.q5_ans_a:
                 if (checked)
                     Q5checked = false;
@@ -173,21 +210,21 @@ boolean Q5checked;
     /**
      * This method calculated the final score (correct answers)
      */
-    public int calculateScore(boolean Q1,boolean Q2,boolean Q3, boolean Q4, boolean Q5) {
+    public int calculateScore(boolean Q1, boolean Q2, boolean Q3, boolean Q4, boolean Q5) {
         if (Q1) {
-            score ++;
+            score++;
         }
         if (Q2) {
-            score ++;
+            score++;
         }
         if (Q3) {
-            score ++;
+            score++;
         }
         if (Q4) {
-            score ++;
+            score++;
         }
         if (Q5) {
-            score ++;
+            score++;
         }
         return score;
     }
@@ -217,9 +254,8 @@ boolean Q5checked;
         Q5checked = false;
         LinearLayout headertext = (LinearLayout) findViewById(R.id.head_layout);
         ScrollView parentScrollView = (ScrollView) findViewById(R.id.parent_scroll_view);
-        parentScrollView.smoothScrollTo(0,headertext.getTop());
+        parentScrollView.smoothScrollTo(0, headertext.getTop());
 
 
     }
-
 }
